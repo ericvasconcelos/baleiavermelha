@@ -1,0 +1,26 @@
+<ion-view view-title="{{title}}">
+  <ion-content>
+    <div class="item item-divider">
+      Idiomas
+    </div>
+    <ion-list>
+      <ion-radio name="language" ng-repeat="lang in languages" ng-model="settings.language" ng-value="lang.val" ng-change="changeLang()">{{lang.name}}</ion-radio>
+    </ion-list>
+    
+    <div class="item item-divider">
+      Frequência dos avisos
+    </div>
+    <ion-list>
+      <ion-radio name="frequency" ng-repeat="fr in frequency" ng-model="settings.frequency" ng-value="fr.val">{{fr.name}}</ion-radio>
+    </ion-list>
+    
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">{{labelTime}}</span>
+        <input class="input-time" type="time" name="time" ng-model="settings.time">
+      </label>
+    </div>
+    
+
+  </ion-content>
+</ion-view>
