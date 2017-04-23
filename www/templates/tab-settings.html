@@ -10,24 +10,26 @@
       </ion-list>
     </div>
     
-    <div class="settings-section">
-      <div class="item-title">
-        {{frequencyTitle}}
-      </div>
-      <ion-list>
-        <ion-radio name="frequency" ng-repeat="fr in frequency" ng-model="settings.frequency" ng-value="fr.val">{{fr.name}}</ion-radio>
-      </ion-list>
-      
+    <div class="settings-section">      
       <div class="list settings-time">
         <label class="item item-input item-stacked-label">
           <span class="input-label">{{labelTime}}</span>
-          <input class="input-time" type="time" name="time" ng-model="settings.time">
         </label>
+        <label class="item item-input item-stacked-label">
+          <p>Selecione o horário clicando no relógio.</p>
+        </label>
+        <label class="item item-input input-time">
+          <i class="icon ion-clock placeholder-icon"></i>
+          <input type="time" name="time" ng-model="settings.time">
+        </label>
+
+        
       </div>
     </div>
     
     <div class="padding">
-      <button class="button button-block button-energized" ng-click="add()">{{nameButton}}</button>
+      <button class="button button-block button-energized" ng-click="add()">{{nameButtonSave}}</button>
+      <button class="button button-block" ng-click="cancelNotification()">{{nameButtonCancel}}</button>
     </div>
   </ion-content>
 </ion-view>

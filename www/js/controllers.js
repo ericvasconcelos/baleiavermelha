@@ -28,61 +28,76 @@ angular.module('starter.controllers', [])
 
 .controller('SettingsCtrl', function($rootScope, $scope, $localStorage, $cordovaLocalNotification, $ionicPopup) {
 
-  var createArrNotify = function() {
+  var createArrNotify = function(time) {
     var arrNotify = [];
+    var alarmTime = time;
     _.each($localStorage.tasks, function(task, i) {
-      if (!taks.done) {
+      if (!task.done) {
         arrNotify.push({
           id: i,
-          date: time,
+          date: alarmTime,
           message: task.name,
           title: $localStorage.tabs.home,
           sound: null,
-          every: "minute",
+          every: "day",
           icon: "file://whale.png",
         })
+
+        alarmTime = new Date(new Date(alarmTime).getTime() + 60 * 60 * 24 * 1000);
       }
     })
-      
-    console.log(arrNotify);
+
+    console.log(arrNotify)
     return arrNotify;
   }
   
   $scope.add = function() {
-    var alarmTime = new Date();
-    alarmTime.setMinutes(alarmTime.getMinutes());
-    createArrNotify();
-    // $cordovaLocalNotification.add(arrNotify)
-    $scope.showAlert();
+    var time = new Date();
+    var hour = $scope.settings.time.getHours();
+    var min = $scope.settings.time.getMinutes();
+    time.setHours(hour);
+    time.setMinutes(min);
+    var notifiers = createArrNotify(time);
+    // $cordovaLocalNotification.add(notifiers)
+    $scope.showAlertSave();
   };
 
   // An alert dialog
-  $scope.showAlert = function() {
+  $scope.showAlertSave = function() {
     var alertPopup = $ionicPopup.alert({
-      title: 'Aviso salvo com sucesso',
+      title: 'Eba!! Notificações salvas!',
       template: 'Faça todos os passos e transforme o mundo num lugar melhor pra se viver'
     });
 
     alertPopup.then(function(res) {
-      console.log('alert ok');
+      console.log('save ok');
     });
   };
 
-  // $scope.isScheduled = function() {
-  //   $cordovaLocalNotification.isScheduled("1234").then(function(isScheduled) {
-  //     alert("Notification 1234 Scheduled: " + isScheduled);
-  //   });
-  // }
+  $scope.showAlertCancel = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Ahhh que pena =(',
+      template: 'Suas notificações foram canceladas. Esperamos que continue na saga de espalhar mais bondade pelo mundo!'
+    });
+
+    alertPopup.then(function(res) {
+      console.log('cancel ok');
+    });
+  };
 
   $scope.cancelNotification = function() {
     $cordovaLocalNotification.cancelAll().then(function (result) {
       console.log(result);
+      $scope.showAlertCancel();
     });
   }
 
   function updateLang () {
     if ($localStorage.settings) {
       $scope.settings = $localStorage.settings;
+      if ($scope.settings.time) {
+        $scope.settings.time = new Date($scope.settings.time);
+      }
     } else {
       $localStorage.settings = $scope.settings = {
         language: "port",
@@ -93,18 +108,13 @@ angular.module('starter.controllers', [])
     if ($localStorage.settings.language == "port") {
       $scope.title = "Configurações";
       $scope.languageTitle = "Idiomas";
-      $scope.frequencyTitle = "Frequência dos avisos";
-      $scope.labelTime = "Horário";
-      $scope.nameButton = "Salvar";
+      $scope.labelTime = "Crie notificações diárias para espalhar o amor s2";
+      $scope.nameButtonSave = "Salvar alertas";
+      $scope.nameButtonCancel = "Cancelar alertas";
 
       $scope.languages = [
         { "name": "Português", "val": "port" },
         { "name": "Inglês", "val": "ing" }
-      ];
-
-      $scope.frequency = [
-        { "name": "1 vez ao dia", "val": "day" },
-        { "name": "1 vez por semana", "val": "week" }
       ];
       
       $localStorage.tabs = $rootScope.tabs = {
@@ -115,18 +125,13 @@ angular.module('starter.controllers', [])
     } else if ($localStorage.settings.language == "ing") {
       $scope.title = "Settings";
       $scope.languageTitle = "Language";
-      $scope.frequencyTitle = "Alert frequency";
-      $scope.labelTime = "Time";
-      $scope.nameButton = "Save";
+      $scope.labelTime = "Create daily notifications to spread love s2";
+      $scope.nameButtonSave = "Save alerts";
+      $scope.nameButtonCancel = "Cancel alerts";
 
       $scope.languages = [
         { "name": "Portuguese","val": "port" },
         { "name": "English","val": "ing" }
-      ];
-
-      $scope.frequency = [
-        { "name": "Once a day", "val": "day" },
-        { "name": "Once a week", "val": "week" }
       ];
 
       $localStorage.tabs = $rootScope.tabs = {

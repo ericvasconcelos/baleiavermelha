@@ -3,7 +3,6 @@ angular.module('starter.services', [])
 .factory('Tasks', function() {
   // Some fake testing data
   var tasks = [
-    
     {
       nome: "Diga a um familiar querido o quanto o ama.",
       name: "",
@@ -25,7 +24,7 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Compre algo para algum medigo/pobre comer.",
+      nome: "Compre algo para algum mendigo/pobre comer.",
       name: "",
       done: false
     },
@@ -55,7 +54,7 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Agradeça a Deus por mais um dia de vida.",
+      nome: "Agradeça por mais um dia de vida.",
       name: "",
       done: false
     },
@@ -80,7 +79,7 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Seja paciente com todas as pessoas durante o dia. Procure não elevar sua voz e tratar a todos com carinho.",
+      nome: "Seja paciente com todos. Procure não elevar sua voz e trate a todos com carinho.",
       name: "",
       done: false
     },
@@ -98,15 +97,18 @@ angular.module('starter.services', [])
       nome: "Envie uma mensagem para alguém dizendo o quanto a presença dela é importante na sua vida.",
       name: "",
       done: false
-    },    {
+    },
+    {
       nome: "Ajude algum animal de rua, nem que seja dando um petisco para ele. Pets também necessitam de amor.",
       name: "",
       done: false
-    },    {
+    },
+    {
       nome: "Dê uma garrafa de água reutilizável cheia de água a um mendigo.",
       name: "",
       done: false
-    },    {
+    },
+    {
       nome: "Se olhe no espelho quando acordar e diga para você mesmo, o quanto és corajoso, bondoso e amado.",
       name: "",
       done: false
@@ -130,7 +132,7 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Agradeça a Deus pela família que possui, mesmo com todos os problemas que ela tem.",
+      nome: "Agradeça sempre pela família que possui, mesmo com todos os problemas que ela tenha. Ter problemas é normal.",
       name: "",
       done: false
     },
@@ -140,7 +142,7 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Vá até o espelho e fale para você mesmo que ainda que o dia seja difícil, você será a melhor pessoa possível.",
+      nome: "Repita 3x para você mesmo que ainda que o dia seja difícil, você dará o melhor de você.",
       name: "",
       done: false
     },
@@ -165,12 +167,12 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Dê atenção as pessoas que pedirem sua atenção hoje.",
+      nome: "Dê atenção as pessoas que precisarem de sua atenção hoje.",
       name: "",
       done: false
     },
     {
-      nome: "Pegue algum objeto que você gosta muito e agradeça por ter ele.",
+      nome: "Pegue algum bem material que você gosta muito e agradeça por ter ele.",
       name: "",
       done: false
     },
@@ -190,7 +192,7 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Crie uma playlist de músicas que te deixa animado.",
+      nome: "Crie uma playlist de músicas que te deixam animado.",
       name: "",
       done: false
     },
@@ -203,19 +205,28 @@ angular.module('starter.services', [])
       nome: "Tente lembrar de algo muito bom que aconteceu recentemente. Se você não lembrar, tente fazer algo bom agora.",
       name: "",
       done: false
-    },    {
+    },
+    {
       nome: "Puxe assunto com algum amigo seu que você não fala há muito tempo e agradeça pela amizade dele mesmo há tanto tempo sem conversar.",
       name: "",
       done: false
-    },    {
-      nome: "Vá até o espelho e se elogie por 1 minuto.",
+    },
+    {
+      nome: "Vá até o espelho e se elogie por 1 minuto nesse instante.",
       name: "",
       done: false
-    },    {
+    },
+    {
       nome: "Ajude alguém no meio da rua com alguma coisa que ela precisa.",
       name: "",
       done: false
-    },    {
+    },
+    {
+      nome: "Quando alguém disser/fizer algo que te deixe magoado, faça uma lista com 10 qualidades dessa pessoa.",
+      name: "",
+      done: false
+    },
+    {
       nome: "Compre um sorvete para alguém desconhecido ou alguém que você sempre quis conversar.",
       name: "",
       done: false

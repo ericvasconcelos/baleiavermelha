@@ -42,15 +42,6 @@ $dark:                            #444 !default;
   position: relative;
   top: -3px; }
 
-.icon-outline-whale:before {
-  content: "\e900";
-  font-size: 45px;
-  margin-left: 9px;
-  position: relative;
-  top: -3px;
-  -webkit-text-stroke: 1px black;
-  color: transparent; }
-
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9901,9 +9892,15 @@ ion-content.has-tabs-top {
     font-size: 16px;
     font-weight: bold; }
 
-.input-time {
+.page-settings .input-time i {
+  font-size: 30px;
+  margin-right: 10px; }
+
+.page-settings .input-time input {
   display: block;
-  font-size: 20px; }
+  width: 50%;
+  padding: 0;
+  font-size: 22px; }
 
 .item-radio input:checked + .radio-content .radio-icon {
   color: #ff7043; }

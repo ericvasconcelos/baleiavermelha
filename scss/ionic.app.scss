@@ -97,13 +97,22 @@ ion-content.has-tabs-top {
       font-weight: bold;
     }
   }
+
+  .input-time  {
+    i {
+      font-size: 30px;
+      margin-right: 10px;
+    }
+
+    input {
+      display: block;
+      width: 50%;
+      padding: 0;
+      font-size: 22px;
+    }
+  } 
 }
 
-
-.input-time {
-  display: block;
-  font-size: 20px;
-}
 
 .item-radio input:checked + .radio-content .radio-icon {
   color: $energized;
