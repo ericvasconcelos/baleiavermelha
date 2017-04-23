@@ -1,0 +1,68 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M663.217 258.816c-190.299-15.099-194.136 198.214-307.553 198.214-97.161 0-86.41-103.202-81.336-132.769 11.25-0.83 26.222-4.87 44.622-16.266 49.171-30.465 19.417-89.769 19.417-89.769-0.961 20.76-28.836 22.65-28.836 22.65-52.106 2.399-58.003 42.73-59.752 64.181-6.838-15.984-23.202-45.233-50.358-42.759-36.691 3.34-29.128 17.826-68.467-2.231 0 0-6.078 57.885 54.826 72.589 15.829 3.822 28.295 3.664 37.991 1.608-3.647 309.316 296.804 379.939 481.744 302.099 213.019-89.652 148.002-362.447-42.296-377.547v0z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "width": 1365,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "icon-whale"
+        ]
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 2,
+        "id": 0,
+        "name": "icon-whale",
+        "prevSize": 32,
+        "code": 59648
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon"
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16
+  }
+}

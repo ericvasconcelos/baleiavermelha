@@ -1,7 +1,7 @@
-<ion-view view-title="Baleia Vermelha">
-  <ion-content>
+<ion-view view-title="{{title}}">
+  <ion-content class="page-home">
     <ion-list>
-      <ion-checkbox ng-repeat="t in tasks" ng-model="t.done">{{t.nome}}</ion-checkbox>
+      <ion-checkbox ng-repeat="t in tasks" ng-model="t.done" ng-change="changeTask()">{{t.nome}}</ion-checkbox>
     </ion-list>
   </ion-content>
 </ion-view>

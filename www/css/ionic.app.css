@@ -15,6 +15,42 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/fonts/icomoon.eot?1fhgj3");
+  src: url("../fonts/icomoon/fonts/icomoon.eot?1fhgj3#iefix") format("embedded-opentype"), url("../fonts/icomoon/fonts/icomoon.ttf?1fhgj3") format("truetype"), url("../fonts/icomoon/fonts/icomoon.woff?1fhgj3") format("woff"), url("../fonts/icomoon/fonts/icomoon.svg?1fhgj3#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-whale:before {
+  content: "\e900";
+  font-size: 45px;
+  margin-left: 9px;
+  position: relative;
+  top: -3px; }
+
+.icon-outline-whale:before {
+  content: "\e900";
+  font-size: 45px;
+  margin-left: 9px;
+  position: relative;
+  top: -3px;
+  -webkit-text-stroke: 1px black;
+  color: transparent; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9818,15 +9854,52 @@ a.button {
 ion-header-bar {
   background-color: #ef5350 !important; }
 
+.tabs-top > .tabs,
+.tabs.tabs-top {
+  height: 65px;
+  padding-top: 9px; }
+
+ion-content.has-tabs-top {
+  top: 109px; }
+
 .bar.bar-stable .title {
   color: #fff; }
 
-.item-checkbox .item-content {
+.page-home .item {
+  border: none; }
+
+.page-home .item-checkbox .item-content {
   overflow: visible;
   text-overflow: inherit;
   white-space: normal;
   font-size: 15px;
   line-height: 17px; }
+
+.page-settings .settings-section {
+  margin-top: 10px;
+  margin-bottom: 40px; }
+
+.page-settings .item-title {
+  padding: 5px 16px;
+  font-size: 16px;
+  font-weight: bold; }
+
+.page-settings .item {
+  border: none; }
+
+.page-settings .item-complex .item-content,
+.page-settings .item-radio .item-content {
+  padding: 10px 49px 10px 16px;
+  font-size: 14px; }
+
+.page-settings .item-radio .radio-icon {
+  padding: 0px 14px; }
+
+.page-settings .settings-time {
+  margin-top: 20px; }
+  .page-settings .settings-time .input-label {
+    font-size: 16px;
+    font-weight: bold; }
 
 .input-time {
   display: block;

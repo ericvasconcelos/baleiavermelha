@@ -18,6 +18,10 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+// my fonts
+// @include font-face(icons, www/fonts/ionicons);
+@import "www/fonts/icomoon/style";
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
@@ -26,22 +30,76 @@ ion-header-bar {
   background-color: $positive !important;
 }
 
+.tabs-top > .tabs, 
+.tabs.tabs-top {
+  height: 65px;
+  padding-top: 9px;
+}
+
+ion-content.has-tabs-top {
+  top: 109px;
+}
+
 .bar.bar-stable .title {
   color: $light;
 }
 
 // Home
-.item-checkbox .item-content {
-  overflow: visible;
-  text-overflow: inherit;
-  white-space: normal;
-  font-size: 15px;
-  line-height: 17px;
+.page-home {
+  .item {
+    border: none;
+  }
+
+  .item-checkbox .item-content {
+    overflow: visible;
+    text-overflow: inherit;
+    white-space: normal;
+    font-size: 15px;
+    line-height: 17px;
+  }
 }
+
 
 // Infos
 
 // Settings
+.page-settings {
+  .settings-section {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  .item-title {
+    padding: 5px 16px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .item {
+    border: none;
+  }
+
+  .item-complex .item-content, 
+  .item-radio .item-content {
+    padding: 10px 49px 10px 16px;
+    font-size: 14px;
+  }
+
+  .item-radio .radio-icon {
+    padding: 0px 14px;
+  }
+
+  .settings-time {
+    margin-top: 20px;
+
+    .input-label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+
+
 .input-time {
   display: block;
   font-size: 20px;

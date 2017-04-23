@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngStorage'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngStorage', 'ngCordova'])
 
 .run(function($ionicPlatform, $rootScope, $localStorage) {
   $ionicPlatform.ready(function() {
@@ -14,24 +14,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
+    }
+    // if (window.StatusBar) {
+    //   // org.apache.cordova.statusbar required
+    //   StatusBar.styleDefault();
+    // }
+    if (window.cordova && window.StatusBar && ionic.Platform.isAndroid()) {
+      StatusBar.backgroundColorByHexString("#ef5350");
+    }
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
   });
 
   if ($localStorage.tabs) {
+    $rootScope.tabs = $localStorage.tabs;
+  } else {
     $localStorage.tabs = $rootScope.tabs = {
       home: "Baleia Vermelha",
       infos: "Informações",
       settings: "Configurações"
     }
-  } else {
-    $rootScope.tabs = $localStorage.tabs;
   }
-  
+
+  // if(device.platform === "iOS") {
+  //   window.plugin.notification.local.promptForPermission();
+  // }
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -52,6 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Each tab has its own nav history stack:
   .state('tab.home', {
     url: '/home',
+    cache: false,
     views: {
       'tab-home': {
         templateUrl: 'templates/tab-home.html',
@@ -62,6 +69,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   .state('tab.infos', {
     url: '/infos',
+    cache: false,
     views: {
       'tab-infos': {
         templateUrl: 'templates/tab-infos.html',
@@ -72,6 +80,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   .state('tab.settings', {
     url: '/settings',
+    cache: false,
     views: {
       'tab-settings': {
         templateUrl: 'templates/tab-settings.html',
@@ -81,6 +90,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/home');
 
 });
