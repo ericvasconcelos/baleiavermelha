@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
   if ($localStorage.tasks) {
     $scope.tasks = $localStorage.tasks;
   } else {
-    $scope.tasks = Tasks;
+    $scope.tasks = $localStorage.tasks = Tasks;
   }
 
   if ($localStorage.settings.language == "port") {
@@ -14,6 +14,7 @@ angular.module('starter.controllers', [])
   }
 
   $scope.changeTask = function () {
+    $scope.tasks = _.orderBy($scope.tasks, ['done'], ['asc']);
     $localStorage.tasks = $scope.tasks;
   }
 })
@@ -35,8 +36,8 @@ angular.module('starter.controllers', [])
       if (!task.done) {
         arrNotify.push({
           id: i,
-          date: alarmTime,
-          message: task.name,
+          at: alarmTime,
+          text: task.nome,
           title: $localStorage.tabs.home,
           sound: null,
           every: "day",
@@ -47,19 +48,25 @@ angular.module('starter.controllers', [])
       }
     })
 
-    console.log(arrNotify)
+    console.log(arrNotify);
     return arrNotify;
   }
   
   $scope.add = function() {
-    var time = new Date();
-    var hour = $scope.settings.time.getHours();
-    var min = $scope.settings.time.getMinutes();
-    time.setHours(hour);
-    time.setMinutes(min);
-    var notifiers = createArrNotify(time);
-    // $cordovaLocalNotification.add(notifiers)
-    $scope.showAlertSave();
+    if ($scope.settings.time) {
+      var time = new Date();
+      var hour = $scope.settings.time.getHours();
+      var min = $scope.settings.time.getMinutes();
+      time.setHours(hour);
+      time.setMinutes(min);
+      var notifiers = createArrNotify(time);
+      $cordovaLocalNotification.cancelAll().then(function (result) { });
+      $cordovaLocalNotification.add(notifiers);
+      $scope.showAlertSave();
+      $scope.timeError = false;
+    } else {
+      $scope.timeError = true;
+    }
   };
 
   // An alert dialog
@@ -87,7 +94,7 @@ angular.module('starter.controllers', [])
 
   $scope.cancelNotification = function() {
     $cordovaLocalNotification.cancelAll().then(function (result) {
-      console.log(result);
+      $scope.settings.time = $localStorage.settings.time = null;
       $scope.showAlertCancel();
     });
   }
@@ -111,6 +118,7 @@ angular.module('starter.controllers', [])
       $scope.labelTime = "Crie notificações diárias para espalhar o amor s2";
       $scope.nameButtonSave = "Salvar alertas";
       $scope.nameButtonCancel = "Cancelar alertas";
+      $scope.errorText = "Selecione o horário";
 
       $scope.languages = [
         { "name": "Português", "val": "port" },
@@ -128,6 +136,7 @@ angular.module('starter.controllers', [])
       $scope.labelTime = "Create daily notifications to spread love s2";
       $scope.nameButtonSave = "Save alerts";
       $scope.nameButtonCancel = "Cancel alerts";
+      $scope.errorText = "Select time";
 
       $scope.languages = [
         { "name": "Portuguese","val": "port" },

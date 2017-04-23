@@ -35,6 +35,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   }
 
+  if (!$localStorage.settings) {
+    $localStorage.settings = {
+      language: "port",
+      frequency: "day"
+    }
+  }
+
   // if(device.platform === "iOS") {
   //   window.plugin.notification.local.promptForPermission();
   // }

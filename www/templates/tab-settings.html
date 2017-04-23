@@ -12,7 +12,7 @@
     
     <div class="settings-section">      
       <div class="list settings-time">
-        <label class="item item-input item-stacked-label">
+        <label class="item item-input item-stacked-label label-time">
           <span class="input-label">{{labelTime}}</span>
         </label>
         <label class="item item-input item-stacked-label">
@@ -22,8 +22,7 @@
           <i class="icon ion-clock placeholder-icon"></i>
           <input type="time" name="time" ng-model="settings.time">
         </label>
-
-        
+        <p class="error" ng-if="timeError">{{errorText}}</p>
       </div>
     </div>
     
