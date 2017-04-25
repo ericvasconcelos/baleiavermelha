@@ -62,7 +62,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       var notifiers = createArrNotify(time);
       $cordovaLocalNotification.add(notifiers);
     };
-    addNotifications();
+
+    if (!$localStorage.settings) {
+      addNotifications();
+    }
   });
 
   if ($localStorage.tabs) {
