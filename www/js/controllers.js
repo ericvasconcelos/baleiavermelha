@@ -1,6 +1,22 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, Tasks, $localStorage) {
+.controller('HomeCtrl', function($scope, Tasks, $localStorage, $cordovaLocalNotification, $state, $timeout) {
+  if (!$localStorage.settings) {
+    if (navigator.language === "pt-BR") {
+      $localStorage.settings = {
+        language: "port",
+        frequency: "day"
+      }
+    } else {
+      $localStorage.settings = {
+        language: "ing",
+        frequency: "day"
+      }
+    }
+
+    $localStorage.settings.firstLogin = true;
+  }
+
   if ($localStorage.tasks) {
     $scope.tasks = $localStorage.tasks;
   } else {
@@ -16,6 +32,55 @@ angular.module('starter.controllers', [])
 
   $scope.changeTask = function () {
     $localStorage.tasks = $scope.tasks;
+  }
+
+  var createArrNotify = function(time) {
+    var arrNotify = [];
+    var alarmTime = time;
+    _.each(Tasks, function(task, i) {
+      var taskName;
+      if ($localStorage.settings.language == "port") {
+        taskName = task.nome;
+      } else {
+        taskName = task.name;
+      }
+      if (!task.done) {
+        arrNotify.push({
+          id: i,
+          at: alarmTime,
+          text: taskName,
+          title: $localStorage.tabs.home,
+          sound: null,
+          every: "day",
+          icon: "file://whale.png",
+        })
+
+        alarmTime = new Date(new Date(alarmTime).getTime() + 60 * 60 * 24 * 1000);
+      }
+    })
+
+    console.log(arrNotify);
+    return arrNotify;
+  }
+  
+  var addNotifications = function() {
+    var time = new Date();
+    var hour = time.getHours();
+    var min = time.getMinutes();
+    time.setHours(hour);
+    time.setMinutes(min);
+    var notifiers = createArrNotify(time);
+    $cordovaLocalNotification.cancelAll().then(function (result) { });
+    $cordovaLocalNotification.add(notifiers);
+  };
+
+  console.log($localStorage.settings.firstLogin);
+  if ($localStorage.settings.firstLogin) {
+    $timeout(function() {
+      addNotifications();
+    }, 3000)
+    $state.go('tab.infos');
+    $localStorage.settings.firstLogin = false;
   }
 })
 
