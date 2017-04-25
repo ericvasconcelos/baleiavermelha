@@ -34,11 +34,17 @@ angular.module('starter.controllers', [])
     var arrNotify = [];
     var alarmTime = time;
     _.each($localStorage.tasks, function(task, i) {
+      var taskName;
+      if ($scope.settings.language == "port") {
+        taskName = task.nome;
+      } else {
+        taskName = task.name;
+      }
       if (!task.done) {
         arrNotify.push({
           id: i,
           at: alarmTime,
-          text: task.nome,
+          text: taskName,
           title: $localStorage.tabs.home,
           sound: null,
           every: "day",
@@ -72,10 +78,17 @@ angular.module('starter.controllers', [])
 
   // An alert dialog
   $scope.showAlertSave = function() {
-    var alertPopup = $ionicPopup.alert({
-      title: 'Eba!! Notificações salvas!',
-      template: 'Faça todos os passos e transforme o mundo num lugar melhor pra se viver'
-    });
+    if ($localStorage.settings.language == "port") {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Eba!! Notificações salvas!',
+        template: 'Faça todos os passos e transforme o mundo num lugar melhor pra se viver'
+      });
+    } else {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Great!! Notifications saved!',
+        template: 'Thank you to help the world a best place to live!'
+      });
+    }
 
     alertPopup.then(function(res) {
       console.log('save ok');
@@ -83,10 +96,17 @@ angular.module('starter.controllers', [])
   };
 
   $scope.showAlertCancel = function() {
-    var alertPopup = $ionicPopup.alert({
-      title: 'Ahhh que pena =(',
-      template: 'Suas notificações foram canceladas. Esperamos que continue na saga de espalhar mais bondade pelo mundo!'
-    });
+    if ($localStorage.settings.language == "port") {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Ahhh que pena =(',
+        template: 'Suas notificações foram canceladas. Esperamos que continue na saga de espalhar mais bondade pelo mundo!'
+      });
+    } else {
+      var alertPopup = $ionicPopup.alert({
+        title: 'What a pitty =(',
+        template: 'Your notifications was canceled'
+      });
+    }
 
     alertPopup.then(function(res) {
       console.log('cancel ok');

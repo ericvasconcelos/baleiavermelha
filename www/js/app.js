@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngStorage', 'ngCordova'])
 
-.run(function($ionicPlatform, $rootScope, $localStorage, $state) {
+.run(function($ionicPlatform, $rootScope, $localStorage, $state, $cordovaLocalNotification, Tasks) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,6 +20,49 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.backgroundColorByHexString("#ef5350");
     }
 
+    if(ionic.Platform.device().platform === "iOS") {
+      window.plugin.notification.local.promptForPermission();
+    }
+
+    var createArrNotify = function(time) {
+      var arrNotify = [];
+      var alarmTime = time;
+      _.each(Tasks, function(task, i) {
+        var taskName;
+        if ($localStorage.settings.language == "port") {
+          taskName = task.nome;
+        } else {
+          taskName = task.name;
+        }
+        if (!task.done) {
+          arrNotify.push({
+            id: i,
+            at: alarmTime,
+            text: taskName,
+            title: $localStorage.tabs.home,
+            sound: null,
+            every: "day",
+            icon: "file://whale.png",
+          })
+
+          alarmTime = new Date(new Date(alarmTime).getTime() + 60 * 60 * 24 * 1000);
+        }
+      })
+
+      console.log(arrNotify);
+      return arrNotify;
+    }
+    
+    var addNotifications = function() {
+      var time = new Date();
+      var hour = time.getHours();
+      var min = time.getMinutes();
+      time.setHours(hour);
+      time.setMinutes(min);
+      var notifiers = createArrNotify(time);
+      $cordovaLocalNotification.add(notifiers);
+    };
+    addNotifications();
   });
 
   if ($localStorage.tabs) {
@@ -33,7 +76,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   }
 
   if (!$localStorage.settings) {
-    console.log(navigator.language, navigator.userLanguage);
     if (navigator.language === "pt-BR") {
       $localStorage.settings = {
         language: "port",
@@ -44,14 +86,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         language: "ing",
         frequency: "day"
       }
+
+      $localStorage.tabs = $rootScope.tabs = {
+        home: "Red Whale",
+        infos: "Infos",
+        settings: "Settings"
+      }
     }
-  } else {
     $state.go('tab.infos');
   }
-
-  // if(device.platform === "iOS") {
-  //   window.plugin.notification.local.promptForPermission();
-  // }
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
