@@ -1,12 +1,24 @@
 <ion-view view-title="{{title}}">
   <ion-content class="padding">
-    <p>Este aplicativo tem o objetivo de espalhar um pouco mais de amor e bondade pelo mundo e principalmente como uma forma de se opor a Baleia Azul.</p>
-    <p>A Baleia Azul é uma "brincadeira" que tem o intuito de incentivar adolescentes, em geral, a realizar tarefas diárias e que ao 50º passo a pessoa deve cometer suicídio.</p>
-    <p>Os principais alvos são pessoas que possuem DEPRESSÃO ou algum tipo de transtorno psicológico.</p>
-    <p>A DEPRESSÃO é uma doença que afeta 4,4%(322 milhões) da população mundial e 5,8%(11,5 milhões) dos brasileiros, segundo dados da OMS. Brasil é o país com maior prevalência de ansiedade no mundo: 9,3%(18,6 milhões).</p>
-    <p>A DEPRESSÃO é uma DOENÇA! Não é falta de porrada quando criança, não é frescura, falta de amigos, falta de diversão, falta de trabalho ou preguiça. Não seja ignorante! Se você souber que alguém possui esta doença, procure ajuda e caso você tenha a doença, não tenha medo de pedir ajuda, pois você não é o culpado.</p>
-    <p>Caso a pessoa que sofra dessa doença não tenha condições de arcar com os custos do tratamento, aqui está uma <a href="https://goo.gl/lGx90q" target="_blank">lista de lugares que podem ajudar com atendimento Psicológico grátis ou de baixo custo</a>.</p>
-    <p>Este projeto foi desenvolvido por <a href="https://www.facebook.com/ericvdeoliveira" target="_blank">Eric Vasconcelos</a>, que sofre com a doença de Ansiedade e acredita no voluntarismo como forma de transformar a sociedade e as pessoas ao seu redor. E contou com a colaboração de <a href="https://www.facebook.com/allana.peixoto" target="_blank">Allan Peixoto</a> no criação dos textos.</p>
-    <p>Faça sua parte como ser humano, não negligencie ajuda a quem realmente precisa.</p>
+    <div ng-if="settings.language == 'ing'">
+      <p>This App aims to spread a little more love and kindness around the world and especially as a way to oppose a Blue Whale.</p>
+      <p>The Blue Whale is a "joke" that aims to encourage adolescents, in general, to perform daily tasks and that at the 50th step the person should commit suicide.</p>
+      <p>DEPRESSION is a disease that affects 4.4% (322 million) of the world population and 5.8% (11.5 million) of Brazilians, according to WHO data. Brazil is the country with the highest prevalence of anxiety in the world: 9.3% (18.6 million).</p>
+      <p>DEPRESSION IS A DISEASE! It is not lack of beating as a child, it is not freshness, lack of friends, lack of fun, lack of work or laziness. Do not be ignorant! If you know that someone has this disease, seek help and if you have the disease, do not be afraid to ask for help because you are not to blame.</p>
+      <p>If the person suffering from this disease can not afford the costs of treatment, here is <a href="#" onclick="window.open('https://goo.gl/lGx90q', '_blank', 'location=yes'); return false;">a list of places that can help with free or low cost psychological care</a>.</p>
+      <p>This project was developed by <a href="#" onclick="window.open('https://www.facebook.com/ericvdeoliveira', '_blank', 'location=yes'); return false;">Eric Vasconcelos</a>, who suffers from Anxiety and believes in volunteerism as a way to transform society and the people around him. And it counted on the collaboration of <a href="#" onclick="window.open('https://www.facebook.com/allana.peixoto', '_blank', 'location=yes'); return false;">Allana Peixoto</a>, <a href="#" onclick="window.open('https://www.facebook.com/adhamsilveira', '_blank', 'location=yes'); return false;">Adham Silveira</a>, <a href="#" onclick="window.open('https://www.facebook.com/alan.rodrigues.798', '_blank', 'location=yes'); return false;">Alan Rodrigues</a>, <a href="#" onclick="window.open('https://www.facebook.com/felipe.bacelar.3388', '_blank', 'location=yes'); return false;">Felipe Bacelar</a> and Marcelo Marra.</p>
+      <p>Do your part as a human being, do not neglect help to those who really need it.</p>
+    </div>
+
+    <div ng-if="settings.language == 'port'">
+      <p>Este aplicativo tem o objetivo de espalhar um pouco mais de amor e bondade pelo mundo e principalmente como uma forma de se opor a Baleia Azul.</p>
+      <p>A Baleia Azul é uma "brincadeira" que tem o intuito de incentivar adolescentes, em geral, a realizar tarefas diárias e que ao 50º passo a pessoa deve cometer suicídio.</p>
+      <p>Os principais alvos são pessoas que possuem DEPRESSÃO ou algum tipo de transtorno psicológico.</p>
+      <p>A DEPRESSÃO é uma doença que afeta 4,4%(322 milhões) da população mundial e 5,8%(11,5 milhões) dos brasileiros, segundo dados da OMS. Brasil é o país com maior prevalência de ansiedade no mundo: 9,3%(18,6 milhões).</p>
+      <p>A DEPRESSÃO é uma DOENÇA! Não é falta de porrada quando criança, não é frescura, falta de amigos, falta de diversão, falta de trabalho ou preguiça. Não seja ignorante! Se você souber que alguém possui esta doença, procure ajuda e caso você tenha a doença, não tenha medo de pedir ajuda, pois você não é o culpado.</p>
+      <p>Caso a pessoa que sofra dessa doença não tenha condições de arcar com os custos do tratamento, aqui está uma <a href="#" onclick="window.open('https://goo.gl/lGx90q', '_blank', 'location=yes'); return false;">lista de lugares que podem ajudar com atendimento psicológico grátis ou de baixo custo</a>.</p>
+      <p>Este projeto foi desenvolvido por <a href="#" onclick="window.open('https://www.facebook.com/ericvdeoliveira', '_blank', 'location=yes'); return false;">Eric Vasconcelos</a>, que sofre com a doença de Ansiedade e acredita no voluntarismo como forma de transformar a sociedade e as pessoas ao seu redor. E contou com a colaboração de <a href="#" onclick="window.open('https://www.facebook.com/allana.peixoto', '_blank', 'location=yes'); return false;">Allana Peixoto</a>, <a href="#" onclick="window.open('https://www.facebook.com/adhamsilveira', '_blank', 'location=yes'); return false;">Adham Silveira</a>, <a href="#" onclick="window.open('https://www.facebook.com/alan.rodrigues.798', '_blank', 'location=yes'); return false;">Alan Rodrigues</a>, <a href="#" onclick="window.open('https://www.facebook.com/felipe.bacelar.3388', '_blank', 'location=yes'); return false;">Felipe Bacelar</a> e Marcelo Marra.</p>
+      <p>Faça sua parte como ser humano, não negligencie ajuda a quem realmente precisa.</p>
+    </div>
   </ion-content>
 </ion-view>

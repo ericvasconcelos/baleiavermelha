@@ -1,6 +1,10 @@
 <ion-view view-title="{{title}}">
   <ion-content class="page-home">
-    <ion-list>
+    <ion-list ng-if="settings.language == 'ing'">
+      <ion-checkbox ng-repeat="t in tasks" ng-model="t.done" ng-change="changeTask()">{{t.name}}</ion-checkbox>
+    </ion-list>
+
+    <ion-list ng-if="settings.language == 'port'">
       <ion-checkbox ng-repeat="t in tasks" ng-model="t.done" ng-change="changeTask()">{{t.nome}}</ion-checkbox>
     </ion-list>
   </ion-content>

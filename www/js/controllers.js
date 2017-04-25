@@ -7,22 +7,23 @@ angular.module('starter.controllers', [])
     $scope.tasks = $localStorage.tasks = Tasks;
   }
 
-  if ($localStorage.settings.language == "port") {
+  $scope.settings = $localStorage.settings;
+  if ($scope.settings.language == "port") {
     $scope.title = "Baleia Vermelha";
-  } else if ($localStorage.settings.language == "ing") {
+  } else if ($scope.settings.language == "ing") {
     $scope.title = "Red Whale";
   }
 
   $scope.changeTask = function () {
-    $scope.tasks = _.orderBy($scope.tasks, ['done'], ['asc']);
     $localStorage.tasks = $scope.tasks;
   }
 })
 
 .controller('InfosCtrl', function($scope, $localStorage) {
-  if ($localStorage.settings.language == "port") {
+  $scope.settings = $localStorage.settings;
+  if ($scope.settings.language == "port") {
     $scope.title = "Informações";
-  } else if ($localStorage.settings.language == "ing") {
+  } else if ($scope.settings.language == "ing") {
     $scope.title = "Infos";
   }
 })

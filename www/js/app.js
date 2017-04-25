@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngStorage', 'ngCordova'])
 
-.run(function($ionicPlatform, $rootScope, $localStorage) {
+.run(function($ionicPlatform, $rootScope, $localStorage, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -15,10 +15,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
     }
-    // if (window.StatusBar) {
-    //   // org.apache.cordova.statusbar required
-    //   StatusBar.styleDefault();
-    // }
+
     if (window.cordova && window.StatusBar && ionic.Platform.isAndroid()) {
       StatusBar.backgroundColorByHexString("#ef5350");
     }
@@ -36,10 +33,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   }
 
   if (!$localStorage.settings) {
-    $localStorage.settings = {
-      language: "port",
-      frequency: "day"
+    console.log(navigator.language, navigator.userLanguage);
+    if (navigator.language === "pt-BR") {
+      $localStorage.settings = {
+        language: "port",
+        frequency: "day"
+      }
+    } else {
+      $localStorage.settings = {
+        language: "ing",
+        frequency: "day"
+      }
     }
+  } else {
+    $state.go('tab.infos');
   }
 
   // if(device.platform === "iOS") {
