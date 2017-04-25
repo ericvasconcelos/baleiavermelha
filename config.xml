@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="br.com.baleiavermelha" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Baleia Vermelha</name>
+<widget id="br.com.redwhale" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Red Whale</name>
   <description>
-      Projeto com o intuito de levar mais amor às pessoas.
+      Spread the love to all the people
   </description>
   <author email="eric_vasconcelosoliveira@hotmail.com" href="http://2re.com.br/ericvasconcelos">
       Eric Vasconcelos
