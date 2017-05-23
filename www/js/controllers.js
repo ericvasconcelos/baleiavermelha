@@ -51,7 +51,6 @@ angular.module('starter.controllers', [])
           text: taskName,
           title: $localStorage.tabs.home,
           sound: null,
-          every: "day",
           icon: "file://whale.png",
         })
 
@@ -112,7 +111,6 @@ angular.module('starter.controllers', [])
           text: taskName,
           title: $localStorage.tabs.home,
           sound: null,
-          every: "day",
           icon: "file://whale.png",
         })
 

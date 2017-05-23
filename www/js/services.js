@@ -5,12 +5,12 @@ angular.module('starter.services', [])
   var tasks = [
     {
       nome: "Diga a um familiar querido o quanto o ama.",
-      name: "Tell a loved one how much you love him.",
+      name: "Tell a loved one how much you loved them.",
       done: false
     },
     {
       nome: "Elogie algum amigo próximo que tenha feito algo legal por você.",
-      name: "Praise someone who has done something cool for you.",
+      name: "Praise a close friend who has done something nice for you.",
       done: false
     },
     {
@@ -20,12 +20,12 @@ angular.module('starter.services', [])
     },
     {
       nome: "Dê bom dia a todas as pessoas que esbarrar pela rua.",
-      name: "Wish a good day to everybody that you see today.",
+      name: "Wish a good day to all those people you come across in the street.",
       done: false
     },
     {
       nome: "Compre algo para alguma pessoa necessitada comer.",
-      name: "Buy something for some beggar/poor eating.",
+      name: "Buy someone who needs something to eat.",
       done: false
     },
     {
@@ -35,7 +35,7 @@ angular.module('starter.services', [])
     },
     {
       nome: "Peça desculpas para alguém, mesmo que a pessoa tenha sido a culpada.",
-      name: "Apologize to someone, even if the person has been the one to blame.",
+      name: "Apologize to someone, even if it is not your fault.",
       done: false
     },
     {
@@ -50,17 +50,17 @@ angular.module('starter.services', [])
     },
     {
       nome: "Pergunte às pessoas que vivem junto a você e a seus vizinhos como eles estão.",
-      name: "Ask the people who lives with you and your neighbors how they're feeling today.",
+      name: "Ask people who live with you and your neighbors how they are.",
       done: false
     },
     {
       nome: "Compre um chocolate para alguém que você goste.",
-      name: "Buy a chocolate to someone you care about.",
+      name: "Buy some chocolate for someone you care of.",
       done: false
     },
     {
       nome: "Seja grato por mais um dia de vida.",
-      name: "Be grateful for another day of life.",
+      name: "Say thanks for another day on your life.",
       done: false
     },
     {
@@ -75,7 +75,7 @@ angular.module('starter.services', [])
     },
     {
       nome: "Convide um amigo para tomar sorvete e diga que vai pagar para ele. Talvez ele esteja precisando conversar, mas esteja no aperto.",
-      name: "Invite a friend to have ice cream and tell him you're going to pay for it. Maybe he needs to talk, but is in the grip.",
+      name: "Invite a friend for some ice cream and tell you are paying. Maybe they need to talk, but haven't got the money or courage for it.",
       done: false
     },
     {
@@ -95,7 +95,7 @@ angular.module('starter.services', [])
     },
     {
       nome: "Quando o transporte público estiver lotado, ofereça seu assento para uma pessoa.",
-      name: "When public transportation is full, offer your seat to one person.",
+      name: "When public transportation is full, offer your seat to someone.",
       done: false
     },
     {
@@ -105,26 +105,26 @@ angular.module('starter.services', [])
     },
     {
       nome: "Ajude algum animal de rua, nem que seja dando um petisco para ele. Pets também necessitam de amor.",
-      name: "Help an abandoned animal, even giving it a snack. Pets also need love.",
+      name: "Help some street animal, even if it is by giving them a snack. Animals also need attention and love.",
       done: false
     },
     {
       nome: "Dê uma garrafa de água reutilizável cheia de água a um mendigo.",
-      name: "Give a beggar a bottle of water.",
+      name: "Give a beggar a reusable bottle full of drinkable water.",
       done: false
     },
     {
       nome: "Se olhe no espelho quando acordar e diga para você mesmo, o quanto és corajoso, bondoso e amado.",
-      name: "Look in the mirror when you wake up and say to yourself how brave, kind and loving you are.",
+      name: "Look at yourself in the mirror when you wake up and tell yourself how brave, kind and loving you are.",
       done: false
     },
     {
       nome: "Se estiver apenas pensando coisas legais sobre uma pessoa, envie uma mensagem para contar. Elogios são sempre necessários e bem vindos.",
-      name: "If you are just thinking nice things about a person, send a message to tell him about. Praise is always needed and welcome.",
+      name: "If you think nice things about someone, send them a message telling them those things. Praising is always needed and welcome.",
       done: false
     },    {
       nome: "Tire 15 minutos para observar a natureza. Tudo isso foi feito para você.",
-      name: "Take 15 minutes to observe nature. All this was done for you.",
+      name: "Take 15 minutes to observe nature. All of that was done for you.",
       done: false
     },    {
       nome: "Diga \"Eu te amo\" para alguém que você ama muito.",
@@ -143,12 +143,12 @@ angular.module('starter.services', [])
     },
     {
       nome: "Agradeça sempre pela família que possui, mesmo com todos os problemas que ela tenha. Ter problemas é normal.",
-      name: "Always thanks for the family you have, even with all the problems they have. Having problems is normal.",
+      name: "Always thank for the family you have and even for their problems. It is normal to have problems.",
       done: false
     },
     {
       nome: "Pegue um lixo da rua que não é seu e jogue no lixo.",
-      name: "Take garbage from the street that is not yours and throw it in the trash.",
+      name: "Collect garbage from a street that is not yours and throw it in the trash.",
       done: false
     },
     {
@@ -158,12 +158,12 @@ angular.module('starter.services', [])
     },
     {
       nome: "Escreva num papel algo que você deseja muito e guarde.",
-      name: "Write on a piece of paper something you want very much and keep.",
+      name: "Write something you really want on a piece of paper and keep it.",
       done: false
     },
     {
       nome: "Passe um dia inteiro sem falar coisas negativas.",
-      name: "Spend a whole day without speaking negative things.",
+      name: "Spend a whole day without saying negative things.",
       done: false
     },
     {
@@ -173,7 +173,7 @@ angular.module('starter.services', [])
     },
     {
       nome: "Pergunte a alguém se ele está se sentido bem e se precisa de alguma coisa.",
-      name: "Ask someone if they are feeling good and need something.",
+      name: "Ask someone if they are feeling well and if they need anything.",
       done: false
     },
     {
@@ -183,12 +183,12 @@ angular.module('starter.services', [])
     },
     {
       nome: "Pegue algum bem material que você gosta muito e agradeça por ter ele.",
-      name: "Think about a good possession you like a lot and thank for having it.",
+      name: "Get some stuff you like a lot and thank for having it.",
       done: false
     },
     {
       nome: "Puxe conversa com um desconhecido e conte algo bom sobre a sua vida.",
-      name: "Starts a conversation with a stranger and tell something good about your life.",
+      name: "Start a conversation with a stranger and tell them something good about your life.",
       done: false
     },
     {
@@ -198,12 +198,12 @@ angular.module('starter.services', [])
     },
     {
       nome: "Faça carinho em alguém.",
-      name: "Caress someone.",
+      name: "Treat someone with care.",
       done: false
     },
     {
       nome: "Crie uma playlist de músicas que te deixam animado.",
-      name: "Create a playlist of songs that make you happy.",
+      name: "Create a list of songs that cheer you up.",
       done: false
     },
     {
@@ -218,7 +218,7 @@ angular.module('starter.services', [])
     },
     {
       nome: "Puxe assunto com algum amigo seu que você não fala há muito tempo e agradeça pela amizade dele mesmo há tanto tempo sem conversar.",
-      name: "Pull a subject with some friend of yours that you have not spoken in a long time and thanks him for his friendship even being so long without contact.",
+      name: "Start a conversation with a friend you have not spoken to for a long time and thank them for their friendship even though you have been apart.",
       done: false
     },
     {
@@ -228,7 +228,7 @@ angular.module('starter.services', [])
     },
     {
       nome: "Ajude alguém no meio da rua com alguma coisa que ela precisa.",
-      name: "Help someone in the middle of the street with something she needs.",
+      name: "Help someone in the street with anything they need.",
       done: false
     },
     {
@@ -243,12 +243,12 @@ angular.module('starter.services', [])
     },
     {
       nome: "Sabe aquele livro que você mais gostou de ler? Deixe ele no banco da praça mais próxima de sua casa com uma dedicatória.",
-      name: "Do you know the one you like to read the most? Leave him on the bench in the square closest to your house with a dedication.",
+      name: "Do you remember that book you love the most? Leave it on the bench in the nearest square with something written on it.",
       done: false
     },
     {
       nome: "Passar em uma rede de lanchonetes e comprar a promoção do dia para alguém que necessita? Sim! Hoje é essa a sua missão.",
-      name: "Go through a network of coffee shops and buy the day's promotion for someone who needs it? Yes! Today is your mission.",
+      name: "Go to a fast food restaurant and buy today's special for someone who really needs it. Yes! That is today's mission!",
       done: false
     },
     {
@@ -258,12 +258,12 @@ angular.module('starter.services', [])
     },
     {
       nome: "Vá ao cinema assistir ao último lançamento dos cinemas.",
-      name: "Go to the cinema to watch the latest release of theaters.",
+      name: "Go to the cinema to watch the latest films.",
       done: false
     },
     {
-      nome: "Escreva uma carta para o seu vizinho falando sobre suas.",
-      name: "Write a letter to your neighbor talking about yours.",
+      nome: "Escreva uma carta para o seu vizinho falando sobre suas qualidades.",
+      name: "Send a letter to your neighbor listing their qualities.",
       done: false
     }
   ];
