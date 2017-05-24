@@ -257,7 +257,7 @@ angular.module('starter.services', [])
       done: false
     },
     {
-      nome: "Vá ao cinema assistir ao último lançamento dos cinemas.",
+      nome: "Vá ao cinema assistir ao último lançamento.",
       name: "Go to the cinema to watch the latest films.",
       done: false
     },
