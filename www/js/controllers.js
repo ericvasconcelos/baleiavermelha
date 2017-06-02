@@ -51,7 +51,7 @@ angular.module('starter.controllers', [])
           text: taskName,
           title: $localStorage.tabs.home,
           sound: null,
-          icon: "file://whale.png",
+          icon: "http://2re.com.br/ericvasconcelos/img/whale.png",
         })
 
         alarmTime = new Date(new Date(alarmTime).getTime() + 60 * 60 * 24 * 1000);
@@ -70,7 +70,7 @@ angular.module('starter.controllers', [])
     time.setMinutes(min);
     var notifiers = createArrNotify(time);
     $cordovaLocalNotification.cancelAll().then(function (result) { });
-    $cordovaLocalNotification.add(notifiers);
+    $cordovaLocalNotification.schedule(notifiers);
   };
 
   console.log($localStorage.settings.firstLogin);
@@ -93,7 +93,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SettingsCtrl', function($rootScope, $scope, $localStorage, $cordovaLocalNotification, $ionicPopup) {
-
   var createArrNotify = function(time) {
     var arrNotify = [];
     var alarmTime = time;
@@ -111,7 +110,7 @@ angular.module('starter.controllers', [])
           text: taskName,
           title: $localStorage.tabs.home,
           sound: null,
-          icon: "file://whale.png",
+          icon: "http://2re.com.br/ericvasconcelos/img/whale.png",
         })
 
         alarmTime = new Date(new Date(alarmTime).getTime() + 60 * 60 * 24 * 1000);
@@ -131,7 +130,7 @@ angular.module('starter.controllers', [])
       time.setMinutes(min);
       var notifiers = createArrNotify(time);
       $cordovaLocalNotification.cancelAll().then(function (result) { });
-      $cordovaLocalNotification.add(notifiers);
+      $cordovaLocalNotification.schedule(notifiers);
       $scope.showAlertSave();
       $scope.timeError = false;
     } else {

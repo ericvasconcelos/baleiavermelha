@@ -19,10 +19,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     if (window.cordova && window.StatusBar && ionic.Platform.isAndroid()) {
       StatusBar.backgroundColorByHexString("#ef5350");
     }
-
-    if(ionic.Platform.device().platform === "iOS") {
-      window.plugin.notification.local.promptForPermission();
-    }
   });
 
   if ($localStorage.tabs) {
